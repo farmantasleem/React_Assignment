@@ -66,6 +66,7 @@ input,button{
   justify-content: center;
   padding: 40px;
   gap: 20px;
+  
 }
 
 #todoContainer div{
@@ -75,4 +76,12 @@ input,button{
 #todoContainer button{
   background-color: rgb(52,37,172);
   padding: 10px;
+}
+
+
+.todo{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 210px;
 }
