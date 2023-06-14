@@ -1,9 +1,30 @@
 import './App.css';
 import React from "react"
+import { Todo } from './Component/Todo';
 
 function App() {
   const[todos,setTodos]=React.useState([])
   const[addtodo,setAddTodo]=React.useState({status:"Pending",task:""})
+
+  function statusUpdate(index){
+    const newArray=todos.map((e,i)=>{
+      if(i==index){
+        return {...e,status:e.status=="Pending"?"Completed":"Pending"}
+      }
+      return e
+    })
+    setTodos([...newArray])
+  }
+
+  function removeTodo(index){
+    const newArray=todos.filter((e,i)=>{
+      if(i!=index){
+        return e
+      }
+   
+    })
+    setTodos([...newArray])
+  }
 
   return (
       <div>
@@ -14,14 +35,7 @@ function App() {
         <div id='todoContainer'>
              {
               todos.map((e,i)=>{
-                return(
-                  <div className='todo'>
-                  <h1>{(i+1)+". "+e.task}</h1>
-                  <p>Status: {e.status}</p>
-                  <button>Update Status</button>
-                  <button>Remove</button>
-                </div>
-                )
+                return <Todo e={e} i={i} removeTodo={removeTodo} statusUpdate={statusUpdate}/>
               })
              }
         </div>
