@@ -1,0 +1,22 @@
+#showproduct{
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 300px 300px 300px;
+  justify-content: center;
+}
+
+.productCard img{
+  width: 200px;
+  height:200px;
+}
+.productCard h1{
+  font-size: 17px;
+}
+
+.productCard button{
+  border: none;
+
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
