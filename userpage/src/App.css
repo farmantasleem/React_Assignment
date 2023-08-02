@@ -11,6 +11,9 @@
   border: 1px solid rgb(137,136,115);
   gap: 5px;  
 }
+*{
+  font-family: sans-serif;
+}
 img{
   mix-blend-mode:multiply;
   width: 220px;
