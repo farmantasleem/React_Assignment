@@ -1,11 +1,7 @@
+import { HomePage } from "./Pages/HomePage"
 
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+
+export const App = () => {
+  return <HomePage/>
 }
-
-export default App;
