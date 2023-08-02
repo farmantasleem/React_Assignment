@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../style/SinglePhoto.css"
+import { useParams } from "react-router-dom";
 
 export const SinglePhoto = () => {
     const[data,setData]=useState([]);
+    const {id} = useParams()
     const getData=async()=>{
-      const resp=await fetch("https://api.slingacademy.com/v1/sample-data/photos");
+      const resp=await fetch(`https://api.slingacademy.com/v1/sample-data/photos/${id}`);
       const data=await resp.json();
       setData(data)
       console.log(data)
