@@ -6,7 +6,7 @@ import "../style/HomePage.css"
 export const HomePage=()=>{
   const[data,setData]=useState([]);
   const getData=async()=>{
-    const resp=await fetch("https://api.slingacademy.com/v1/sample-data/photos");
+    const resp=await fetch("https://api.slingacademy.com/v1/sample-data/photos?limit=20");
     const {photos}=await resp.json();
     setData(photos)
     console.log(photos)

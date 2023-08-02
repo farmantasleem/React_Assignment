@@ -16,11 +16,11 @@ export const SinglePhoto = () => {
     },[])
     return (
         <div id="singlePhoto">
-                <img src={data.url} alt="" />
+                <img src={data?.url} alt="" />
                 <div>
-                    <h1>{data.title}</h1>
+                    <h1>{data?.title}</h1>
                     <p>
-                            {data.description}
+                            {data?.description}
                     </p>
                 </div>
         </div>
