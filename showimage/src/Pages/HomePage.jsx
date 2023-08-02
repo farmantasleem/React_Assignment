@@ -19,7 +19,7 @@ export const HomePage=()=>{
     <div id="parent">
           {
             data?.map((e,i)=>{
-              return <ImageCard imageUrl={e.url} key={i}/>
+              return <ImageCard id={e.id} imageUrl={e.url} key={i}/>
             })
           }
     </div>
