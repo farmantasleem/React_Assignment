@@ -1,7 +1,8 @@
 import { HomePage } from "./Pages/HomePage"
+import { SinglePhoto } from "./Pages/SinglePhoto"
 
 
 
-export const App = () => {
-  return <HomePage/>
-}
+ const App = () => <SinglePhoto/>
+
+export default App

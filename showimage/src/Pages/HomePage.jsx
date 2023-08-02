@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { ImageCard } from "./component/ImageCard";
-import "./app.css"
+import { ImageCard } from"../component/ImageCard"
+import "../style/HomePage.css"
 
 
 export const HomePage=()=>{
