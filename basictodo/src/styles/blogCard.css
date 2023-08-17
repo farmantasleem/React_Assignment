@@ -17,6 +17,10 @@
     border-radius: 10px;
 }
 
+.blogCard p {
+    height: 200px;
+    overflow: scroll;
+}
 .blogCard h1{
     font-size: 17px;
 }

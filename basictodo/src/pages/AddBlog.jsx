@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Header } from "../components/Header";
 import "../styles/form.css"
-export const AddBlog =({updateData,prevData})=>{
+export const AddBlog =({updateData,prevData=[]})=>{
     const[blogData,setBlogData]=useState({
+    
         title:"",
         img:"",
         desc:"",
@@ -10,7 +11,9 @@ export const AddBlog =({updateData,prevData})=>{
     })
 
     const submitData=()=>{
+        const newData=[blogData,...prevData]
         updateData([blogData,...prevData])
+       localStorage.setItem("blogData",JSON.stringify(newData))
     }
     return(
         <div id="formParent">

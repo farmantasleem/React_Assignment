@@ -1,8 +1,16 @@
 import React from "react";
 import "../styles/blogCard.css"
+import { NavLink } from "react-router-dom";
 
 export const BlogCard=(props)=>{
-    const {img,title,desc} = props
+    const {img,title,desc,id,setBlogData,blogData} = props
+    const deleteBlog =()=>{
+        const newArr=blogData.filter((e,i)=> id!==i )
+        console.log(newArr)
+        setBlogData([...newArr])
+        localStorage.setItem("blogData",JSON.stringify(newArr))
+    }
+
     return(
         <div className="blogCard">
             <img src={img} alt="" srcset="" />
@@ -12,9 +20,9 @@ export const BlogCard=(props)=>{
             <p>
                 Blog Description: {desc}
             </p>
-            <button>Read Blog</button>
+           <NavLink to={`/read/${id}`}> <button>Read Blog</button></NavLink>
             <button>Edit Blog</button>
-            <button>Delete Blog</button>
+            <button onClick={deleteBlog}>Delete Blog</button>
         </div>
     )
 }
