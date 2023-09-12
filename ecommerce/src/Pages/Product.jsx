@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
-import { deleteProduct } from "../redux/actions"
+import { actions } from "../redux/productSlice"
+// import { deleteProduct } from "../redux/actions"
 export const Product =({title,price,addCart,setCart,id}) => {
  const dispatch =useDispatch()
  
   const handleClick=()=>{
-      dispatch(deleteProduct(id))
+      dispatch(actions.deleteProduct(id))
     }
     return(
         <div class="product">

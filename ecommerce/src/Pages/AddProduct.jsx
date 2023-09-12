@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom"
-import { addtoProduct } from "../redux/actions";
+import { actions } from "../redux/productSlice";
 
 export const AddProduct =() => {
     const state = useSelector(state=>state);
@@ -11,7 +11,7 @@ export const AddProduct =() => {
     })
     const dispatch = useDispatch()
     const handleSubmit =()=>{
-        dispatch(addtoProduct(productData))
+        dispatch(actions.addProduct(productData))
     }
     useEffect(()=>{
         console.log("I am called from add to cart",state)

@@ -1,17 +1,18 @@
-import {
-  compose,
-    legacy_createStore,
-  } from "redux";
-import reducer from "./reducer";
+import {configureStore} from "@reduxjs/toolkit"
+
+import productSlice from "./productSlice";
+import todoSlice from "./todoSlice";
+
+export const store = configureStore({
+  reducer:{
+    product:productSlice,
+    todo:todoSlice
+  },
+  devTools:true
+})
+
+// you would have only one store?? this is for sure?
 
 
-  
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
- 
-  
-  export const store = legacy_createStore(
-    reducer,
-    composeEnhancers()
-  );
-  
+
